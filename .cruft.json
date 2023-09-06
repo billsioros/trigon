@@ -1,0 +1,20 @@
+{
+  "template": "https://github.com/billsioros/cookiecutter-pypackage",
+  "commit": "bbfccb7133fd37e87082b8042c66c92101458f32",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "RapidAPI",
+      "package_name": "rapidapi",
+      "project_description": "A batteries-included python web framework",
+      "author": "Vasilis Sioros",
+      "email": "billsioros97@gmail.com",
+      "github_user": "billsioros",
+      "github_repository": "https://github.com/billsioros/RapidAPI",
+      "version": "0.0.0",
+      "license": "mit",
+      "_template": "https://github.com/billsioros/cookiecutter-pypackage"
+    }
+  },
+  "directory": null
+}
