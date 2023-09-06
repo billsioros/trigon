@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Example 01",
+      "type": "python",
+      "request": "launch",
+      "program": "examples/example_01/app.py",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+    },
+  ]
+}
