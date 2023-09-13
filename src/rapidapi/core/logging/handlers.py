@@ -3,7 +3,6 @@ import logging
 from loguru import logger
 
 
-
 class InterceptHandler(logging.Handler):
     """Default handler from examples in loguru documentation.
 
