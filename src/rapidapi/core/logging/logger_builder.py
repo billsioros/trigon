@@ -5,9 +5,9 @@ from typing import Any, Dict, Type
 from loguru import _defaults, logger
 
 from rapidapi.core.event_handler import EventHandler
+from rapidapi.core.logging.handlers import InterceptHandler
 from rapidapi.core.logging.middleware import LoggingMiddleware
 from rapidapi.core.middleware import Middleware
-from rapidapi.core.logging.handlers import InterceptHandler
 
 
 def default_formatter(record):
