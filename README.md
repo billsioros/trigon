@@ -3,7 +3,7 @@
 <p align="center"><em>A batteries-included python web framework</em></p>
 
 <p align="center">
-  <a href="https://www.python.org/">
+  <!-- <a href="https://www.python.org/">
     <img
       src="https://img.shields.io/pypi/pyversions/rapidapi"
       alt="PyPI - Python Version"
@@ -20,7 +20,7 @@
       src="https://github.com/billsioros/RapidAPI/actions/workflows/ci.yml/badge.svg"
       alt="CI"
     />
-  </a>
+  </a> -->
   <a href="https://github.com/billsioros/RapidAPI/actions/workflows/cd.yml">
     <img
       src="https://github.com/billsioros/RapidAPI/actions/workflows/cd.yml/badge.svg"
@@ -33,17 +33,17 @@
       alt="pre-commit.ci status"
     />
   </a>
-  <a href="https://codecov.io/gh/billsioros/RapidAPI">
+  <!-- <a href="https://codecov.io/gh/billsioros/RapidAPI">
     <img
       src="https://codecov.io/gh/billsioros/RapidAPI/branch/master/graph/badge.svg?token=coLOL0j6Ap"
       alt="Test Coverage"/>
-  </a>
-  <a href="https://opensource.org/licenses/MIT">
+  </a> -->
+  <!-- <a href="https://opensource.org/licenses/MIT">
     <img
       src="https://img.shields.io/pypi/l/RapidAPI"
       alt="PyPI - License"
     />
-  </a>
+  </a> -->
   <a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/billsioros/RapidAPI">
     <img
       src="https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode"
@@ -150,6 +150,8 @@ if __name__ == "__main__":
 
     uvicorn.run(app, host="0.0.0.0", port=8000)
 ```
+
+> For a more elaborate example (controller discovery, database configuration, Repository-Service Pattern, etc.) check out [Example 02](./examples/example_02/).
 
 ## :sparkles: Contributing
 
