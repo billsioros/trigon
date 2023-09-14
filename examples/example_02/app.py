@@ -5,11 +5,11 @@ from repositories.user_repository import UserRepository
 from services.user_service import UserService
 from trigon.contrib.plugins.database import SQLitePlugin
 from trigon.middlewares.logging import LoggingMiddleware
-from trigon.trigon import trigon
+from trigon.trigon import Trigon
 
 if __name__ == "__main__":
     app = (
-        trigon()
+        Trigon()
         .build_container(lambda container: container.factory(UserRepository).factory(UserService))
         .discover_controllers(controllers)
         .configure_logging(

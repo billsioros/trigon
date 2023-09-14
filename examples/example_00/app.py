@@ -4,7 +4,7 @@ import uvicorn
 from trigon.core.controller import Controller, http, route
 from trigon.core.controller.result import Ok, Result
 from trigon.middlewares.logging import LoggingMiddleware
-from trigon.trigon import trigon
+from trigon.trigon import Trigon
 
 
 class ItemService:
@@ -49,7 +49,7 @@ class ItemController(Controller):
 
 if __name__ == "__main__":
     app = (
-        trigon()
+        Trigon()
         .build_container(lambda builder: builder.singleton(ItemService))
         .register_controllers(ItemController)
         .configure_logging(
