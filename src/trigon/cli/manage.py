@@ -3,7 +3,6 @@ import webbrowser
 
 import typer
 
-# from trigon.app import app
 from trigon.cli.commands.database import group as database
 from trigon.cli.commands.migrations import group as migrations
 
