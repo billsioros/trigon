@@ -3,7 +3,7 @@ from typing import Callable, Type, TypeVar, get_args, get_origin, get_type_hints
 
 from fastapi import HTTPException
 
-from rapidapi.core.controller.result import Result
+from trigon.core.controller.result import Result
 
 T = TypeVar("T")
 

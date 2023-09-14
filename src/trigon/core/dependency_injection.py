@@ -2,7 +2,7 @@ from typing import Any, Callable, Dict, Type, TypeVar
 
 from lagom import Container as BaseContainer
 
-from rapidapi.helpers.resolution import get_required_constructor_arguments
+from trigon.helpers.resolution import get_required_constructor_arguments
 
 T = TypeVar("T")
 

@@ -1,19 +1,20 @@
-from collections.abc import Iterator
+from typing import List
 
 from models.user import User
-from rapidapi.contrib.service import Conflict, NotFound, Ok, ServiceResult, Unauthorized
 from repositories.user_repository import UserRepository
 from schemas.user import UserCreate
+from services import Conflict, NotFound, Ok, ServiceResult, Unauthorized
+from trigon.contrib.service import Service
 
 
-class UserService:
+class UserService(Service):
     def __init__(
         self,
         user_repository: UserRepository,
     ) -> None:
         self._user_repository: UserRepository = user_repository
 
-    def get_all(self) -> ServiceResult[Iterator[User]]:
+    def get_all(self) -> ServiceResult[List[User]]:
         return Ok(self._user_repository.get_all())
 
     def get_by_id(self, id: str) -> ServiceResult[User]:
@@ -36,7 +37,6 @@ class UserService:
 
     def create(self, user_create: UserCreate) -> ServiceResult[User]:
         try:
-            # TODO: Consider unique together constraint
             user_result = self.get_by_username(user_create.username)
             if not user_result:
                 user_result = self.get_by_email(user_create.email)

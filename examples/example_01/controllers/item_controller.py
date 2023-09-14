@@ -1,7 +1,7 @@
 from typing import Any, Dict
 
-from rapidapi.core.controller import Controller, Ok, Result, http, route
 from services.item_service import ItemService
+from trigon.core.controller import Controller, Ok, Result, http, route
 
 
 class ItemController(Controller):

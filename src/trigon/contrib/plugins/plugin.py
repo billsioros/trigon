@@ -1,9 +1,9 @@
 from typing import Type
 
-from rapidapi.core.controller import Controller
-from rapidapi.core.dependency_injection import ContainerBuilder
-from rapidapi.core.event_handler import EventHandler
-from rapidapi.core.middleware import Middleware
+from trigon.core.controller import Controller
+from trigon.core.dependency_injection import ContainerBuilder
+from trigon.core.event_handler import EventHandler
+from trigon.core.middleware import Middleware
 
 
 class Plugin:

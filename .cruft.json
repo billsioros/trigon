@@ -4,13 +4,13 @@
   "checkout": null,
   "context": {
     "cookiecutter": {
-      "project_name": "RapidAPI",
-      "package_name": "rapidapi",
+      "project_name": "trigon",
+      "package_name": "trigon",
       "project_description": "A batteries-included python web framework",
       "author": "Vasilis Sioros",
       "email": "billsioros97@gmail.com",
       "github_user": "billsioros",
-      "github_repository": "https://github.com/billsioros/RapidAPI",
+      "github_repository": "https://github.com/billsioros/trigon",
       "version": "0.0.0",
       "license": "mit",
       "_template": "https://github.com/billsioros/cookiecutter-pypackage"

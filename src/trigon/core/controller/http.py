@@ -1,7 +1,7 @@
 from http.client import responses as description_per_status_code
 from typing import Callable, Type, TypeVar
 
-from rapidapi.core.controller.result import Error, Result
+from trigon.core.controller.result import Error, Result
 
 T = TypeVar("T")
 

@@ -1,13 +1,14 @@
 import logging
 import sys
-from typing import Any, Dict, Type
+from itertools import chain
+from typing import TYPE_CHECKING, Any, Dict, Type
 
-from loguru import _defaults, logger
+from loguru import _defaults
 
-from rapidapi.core.event_handler import EventHandler
-from rapidapi.core.logging.handlers import InterceptHandler
-from rapidapi.core.logging.middleware import LoggingMiddleware
-from rapidapi.core.middleware import Middleware
+from trigon.core.logging.handlers import InterceptHandler
+
+if TYPE_CHECKING:
+    from trigon.core.middleware import Middleware
 
 
 def default_formatter(record):
@@ -26,8 +27,13 @@ class LoggerBuilder:
         self.middleware_type: Type[Middleware] | None = None
         self.handlers: list[Dict[str, Any]] = []
 
-    def override(self, *tags: str):
-        self.override_tags = tags
+    def override(self, *modules: str, level: int = logging.DEBUG):
+        logging.basicConfig(handlers=[InterceptHandler()], level=level)
+
+        for logger_name in chain(("",), modules):
+            mod_logger = logging.getLogger(logger_name)
+            mod_logger.handlers = [InterceptHandler(level=level)]
+            mod_logger.propagate = False
 
         return self
 
@@ -80,33 +86,3 @@ class LoggerBuilder:
         )
 
         return self
-
-    def register_middleware(self, middleware_type: Type[Middleware] | None = None):
-        self.middleware_type = middleware_type
-
-        if self.middleware_type is None:
-            self.middleware_type = LoggingMiddleware
-
-        return self
-
-    def _get_event_handler(self):
-        class LoggingEventHandler(EventHandler):
-            event_type = "startup"
-
-            def __call__(__event_handler_self__) -> None:
-                if self.override_tags:
-                    for tag in self.override_tags:
-                        conventional_loggers = (
-                            logging.getLogger(name)
-                            for name in logging.root.manager.loggerDict
-                            if name.startswith(f"{tag}.")
-                        )
-                        for conventional_logger in conventional_loggers:
-                            conventional_logger.handlers = []
-
-                        intercept_handler = InterceptHandler()
-                        logging.getLogger(tag).handlers = [intercept_handler]
-
-                logger.configure(handlers=self.handlers)
-
-        return LoggingEventHandler

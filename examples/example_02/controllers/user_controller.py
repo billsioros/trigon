@@ -1,7 +1,7 @@
-from rapidapi.core.controller import Controller, http, route
-from rapidapi.core.controller.result import Created, Error, NoContent, NotFound, Ok, Result
 from schemas.user import User, UserCreate
 from services.user_service import UserService
+from trigon.core.controller import Controller, http, route
+from trigon.core.controller.result import Created, Error, NoContent, NotFound, Ok, Result
 
 
 # TODO: async

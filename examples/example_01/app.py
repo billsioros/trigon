@@ -1,19 +1,20 @@
 import controllers
 import uvicorn
-from rapidapi.rapidapi import RapidAPI
 from services.item_service import ItemService
+from trigon.middlewares.logging import LoggingMiddleware
+from trigon.trigon import trigon
 
 if __name__ == "__main__":
     app = (
-        RapidAPI()
+        trigon()
         .build_container(lambda container: container.singleton(ItemService))
         .discover_controllers(controllers)
         .configure_logging(
-            lambda builder: builder.override("uvicorn")
-            .register_middleware()
+            lambda builder: builder.override("uvicorn.error", "uvicorn.asgi", "uvicorn.access")
             .add_console_handler()
             .add_file_handler("logs/{time}.log"),
         )
+        .register_middlewares(LoggingMiddleware)
         .build()
     )
 

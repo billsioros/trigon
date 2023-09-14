@@ -5,14 +5,14 @@ requires = [
 ]
 
 [tool.poetry]
-name = "rapidapi"
+name = "trigon"
 version = "0.1.0"
 description = "A batteries-included python web framework"
 readme = "README.md"
 authors = ["Vasilis Sioros <billsioros97@gmail.com>"]
 license = "MIT"
-homepage = "https://billsioros.github.io/RapidAPI"
-repository = "https://github.com/billsioros/RapidAPI"
+homepage = "https://billsioros.github.io/trigon"
+repository = "https://github.com/billsioros/trigon"
 keywords = []
 classifiers = [
   "Programming Language :: Python",
@@ -21,11 +21,11 @@ classifiers = [
 ]
 
 [tool.poetry.scripts]
-manage = "rapidapi.cli.manage:cli"
+trigon = "trigon.cli.manage:cli"
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/billsioros/RapidAPI/issues"
-"Changelog" = "https://github.com/billsioros/RapidAPI/releases"
+"Bug Tracker" = "https://github.com/billsioros/trigon/issues"
+"Changelog" = "https://github.com/billsioros/trigon/releases"
 
 [tool.poetry.dependencies]
 python = ">=3.8,<4.0"
@@ -208,9 +208,9 @@ docstring-quotes = "double"
 
 [tool.isort]
 profile = "black"
-src_paths = ["src/rapidapi", "tests"]
+src_paths = ["src/trigon", "tests"]
 line_length = 99
-known_first_party = "rapidapi"
+known_first_party = "trigon"
 
 [tool.pytest.ini_options]
 addopts = "-vv --color=yes"
@@ -227,7 +227,7 @@ source = ["src"]
 
 [tool.coverage.run]
 branch = true
-source = ["rapidapi"]
+source = ["trigon"]
 
 [tool.coverage.report]
 show_missing = true
@@ -242,7 +242,7 @@ ignore_errors = true
 omit = ["tests/*"]
 
 [tool.mypy]
-files = ["src/rapidapi"]
+files = ["src/trigon"]
 warn_unused_configs = true
 warn_return_any = true
 ignore_missing_imports = true
@@ -260,7 +260,7 @@ build_command = "python -m pip install poetry && poetry build"
 
 [tool.vulture]
 min_confidence = 95
-paths = ["src/rapidapi", "tests"]
+paths = ["src/trigon", "tests"]
 
 [tool.poe.tasks]
 
@@ -290,12 +290,12 @@ cmd = "poetry run mkdocs serve"
 
 [tool.poe.tasks.test]
 help = "Run the test suite and produce a coverage report"
-cmd = "poetry run pytest --cov=rapidapi"
+cmd = "poetry run pytest --cov=trigon"
 
 [tool.docformatter]
 black = true
 non-strict = true
-non-cap = ["rapidapi"]
+non-cap = ["trigon"]
 recursive = true
 in-place = true
 

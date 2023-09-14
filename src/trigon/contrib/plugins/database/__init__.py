@@ -1,17 +1,22 @@
+from typing import TypeVar
+
+from trigon.contrib.plugins import Plugin
+from trigon.core.dependency_injection import ContainerBuilder
+
+T = TypeVar("T")
+
 from collections.abc import Iterator
 from contextlib import contextmanager
 
-from models._model import Model
-from settings import DatabaseSettings
 from sqlalchemy import create_engine, orm, sql
 from sqlalchemy.orm import Session
 from sqlalchemy.pool import StaticPool
 
 
 class Database:
-    def __init__(self, settings: DatabaseSettings) -> None:
+    def __init__(self, url: str) -> None:
         self._engine = create_engine(
-            str(settings.url),
+            url,
             poolclass=StaticPool,
             connect_args={"check_same_thread": False},
         )
@@ -22,12 +27,6 @@ class Database:
                 bind=self._engine,
             ),
         )
-
-        self.create_database()
-
-    # TODO: startup / shutdown hooks
-    def create_database(self) -> None:
-        Model.metadata.create_all(self._engine)
 
     @contextmanager
     def session_factory(self) -> Iterator[Session]:
@@ -46,3 +45,19 @@ class Database:
                 session.execute(sql.text("SELECT 1"))
         except Exception as e:
             return str(e)
+
+
+class SQLitePlugin(Plugin):
+    def __init__(self, url: str, model_base: type) -> None:
+        super().__init__()
+
+        self.url = url
+        self.model_base = model_base
+
+    def register_dependencies(self, container: ContainerBuilder) -> ContainerBuilder:
+        database = Database(self.url)
+
+        # TODO: CLI
+        self.model_base.metadata.create_all(database._engine)
+
+        return container.bind(Database, database)
