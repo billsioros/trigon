@@ -3,16 +3,16 @@ import webbrowser
 
 import typer
 
-from rapidapi.app import app
-from rapidapi.cli.commands.database import group as database
-from rapidapi.cli.commands.migrations import group as migrations
+# from trigon.app import app
+from trigon.cli.commands.database import group as database
+from trigon.cli.commands.migrations import group as migrations
 
 cli: typer.Typer = typer.Typer()
 
 
-@cli.callback(name="rapidapi")
+@cli.callback(name="trigon")
 def main(ctx: typer.Context):
-    """R CLI."""
+    """Trigon CLI."""
     ctx.obj = {"db": app.state.container.resources.database()}
 
 
@@ -31,7 +31,7 @@ def serve(port: int = 8000):
                 "poetry",
                 "run",
                 "uvicorn",
-                "src.rapidapi.app:app",
+                "src.trigon.app:app",
                 "--port",
                 f"{port}",
                 "--reload",
@@ -45,7 +45,7 @@ def serve(port: int = 8000):
 @cli.command()
 def test():
     """Run the test suite."""
-    cmd = "poetry run python -m pytest --cov=rapidapi"
+    cmd = "poetry run python -m pytest --cov=trigon"
 
     try:
         subprocess.run(cmd.split())

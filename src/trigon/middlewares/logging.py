@@ -3,7 +3,7 @@ from starlette.middleware.base import RequestResponseEndpoint
 from starlette.requests import Request
 from starlette.responses import Response
 
-from rapidapi.core.middleware import Middleware
+from trigon.core.middleware import Middleware
 
 
 class LoggingMiddleware(Middleware):

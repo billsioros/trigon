@@ -1,63 +1,63 @@
-<h1 align="center">RapidAPI</h1>
+<h1 align="center">Trigon</h1>
 
 <p align="center"><em>A batteries-included python web framework</em></p>
 
 <p align="center">
   <!-- <a href="https://www.python.org/">
     <img
-      src="https://img.shields.io/pypi/pyversions/rapidapi"
+      src="https://img.shields.io/pypi/pyversions/trigon"
       alt="PyPI - Python Version"
     />
   </a>
-  <a href="https://pypi.org/project/rapidapi/">
+  <a href="https://pypi.org/project/trigon/">
     <img
-      src="https://img.shields.io/pypi/v/rapidapi"
+      src="https://img.shields.io/pypi/v/trigon"
       alt="PyPI"
     />
   </a>
-  <a href="https://github.com/billsioros/RapidAPI/actions/workflows/ci.yml">
+  <a href="https://github.com/billsioros/trigon/actions/workflows/ci.yml">
     <img
-      src="https://github.com/billsioros/RapidAPI/actions/workflows/ci.yml/badge.svg"
+      src="https://github.com/billsioros/trigon/actions/workflows/ci.yml/badge.svg"
       alt="CI"
     />
   </a> -->
-  <a href="https://github.com/billsioros/RapidAPI/actions/workflows/cd.yml">
+  <a href="https://github.com/billsioros/trigon/actions/workflows/cd.yml">
     <img
-      src="https://github.com/billsioros/RapidAPI/actions/workflows/cd.yml/badge.svg"
+      src="https://github.com/billsioros/trigon/actions/workflows/cd.yml/badge.svg"
       alt="CD"
     />
   </a>
-  <a href="https://results.pre-commit.ci/latest/github/billsioros/RapidAPI/master">
+  <a href="https://results.pre-commit.ci/latest/github/billsioros/trigon/master">
     <img
-      src="https://results.pre-commit.ci/badge/github/billsioros/RapidAPI/master.svg"
+      src="https://results.pre-commit.ci/badge/github/billsioros/trigon/master.svg"
       alt="pre-commit.ci status"
     />
   </a>
-  <!-- <a href="https://codecov.io/gh/billsioros/RapidAPI">
+  <!-- <a href="https://codecov.io/gh/billsioros/trigon">
     <img
-      src="https://codecov.io/gh/billsioros/RapidAPI/branch/master/graph/badge.svg?token=coLOL0j6Ap"
+      src="https://codecov.io/gh/billsioros/trigon/branch/master/graph/badge.svg?token=coLOL0j6Ap"
       alt="Test Coverage"/>
   </a> -->
   <!-- <a href="https://opensource.org/licenses/MIT">
     <img
-      src="https://img.shields.io/pypi/l/RapidAPI"
+      src="https://img.shields.io/pypi/l/trigon"
       alt="PyPI - License"
     />
   </a> -->
-  <a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/billsioros/RapidAPI">
+  <a href="https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/billsioros/trigon">
     <img
       src="https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode"
       alt="Open in GitHub Codespaces"
     />
   </a>
-  <a href="https://app.renovatebot.com/dashboard#github/billsioros/RapidAPI">
+  <a href="https://app.renovatebot.com/dashboard#github/billsioros/trigon">
     <img
       src="https://img.shields.io/badge/renovate-enabled-brightgreen.svg?style=flat&logo=renovatebot"
       alt="Renovate - Enabled">
   </a>
-  <a href="https://github.com/billsioros/RapidAPI/actions/workflows/dependency_review.yml">
+  <a href="https://github.com/billsioros/trigon/actions/workflows/dependency_review.yml">
     <img
-      src="https://github.com/billsioros/RapidAPI/actions/workflows/dependency_review.yml/badge.svg"
+      src="https://github.com/billsioros/trigon/actions/workflows/dependency_review.yml/badge.svg"
       alt="Dependency Review"
     />
   </a>
@@ -77,21 +77,21 @@
 
 > **Attention**: The project is a work in progress and should not be used in production :construction:
 
-Installing the [`RapidAPI`](https://pypi.org/project/RapidAPI/) can be done as such:
+Installing [`trigon`](https://pypi.org/project/trigon/) can be done as such:
 
 ```shell
-pip install rapidapi
+pip install trigon
 ```
 
-The project's documentation can be found [here](https://billsioros.github.io/RapidAPI/).
+The project's documentation can be found [here](https://billsioros.github.io/trigon/).
 
 ```python
 from typing import Any, Dict
 
 import uvicorn
-from rapidapi.core.controller import Controller, http, route
-from rapidapi.core.controller.result import Ok, Result
-from rapidapi.rapidapi import RapidAPI
+from trigon.core.controller import Controller, http, route
+from trigon.core.controller.result import Ok, Result
+from trigon.trigon import trigon
 
 
 class ItemService:
@@ -136,7 +136,7 @@ class ItemController(Controller):
 
 if __name__ == "__main__":
     app = (
-        RapidAPI()
+        trigon()
         .build_container(lambda builder: builder.singleton(ItemService))
         .register_controllers(ItemController)
         .configure_logging(
@@ -155,11 +155,11 @@ if __name__ == "__main__":
 
 ## :sparkles: Contributing
 
-If you would like to contribute to the project, please go through the [Contributing Guidelines](https://billsioros.github.io/RapidAPI/latest/CONTRIBUTING/) first. In order to locally set up the project please follow the instructions below:
+If you would like to contribute to the project, please go through the [Contributing Guidelines](https://billsioros.github.io/trigon/latest/CONTRIBUTING/) first. In order to locally set up the project please follow the instructions below:
 
 ```shell
 # Set up the GitHub repository
-git clone https://github.com/billsioros/RapidAPI.git
+git clone https://github.com/billsioros/trigon.git
 
 # Create a virtual environment using poetry and install the required dependencies
 poetry shell

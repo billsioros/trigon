@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING
 import typer
 
 if TYPE_CHECKING:
-    from rapidapi.resources.database import Database
+    from trigon.resources.database import Database
 
 group: typer.Typer = typer.Typer()
 

@@ -6,20 +6,20 @@ from typing import Any, Callable, Dict, Optional, Type, Union
 
 from fastapi import APIRouter, FastAPI
 
-from rapidapi.contrib.plugins import PluginBuilder
-from rapidapi.core.controller import Controller
-from rapidapi.core.dependency_injection import ContainerBuilder
-from rapidapi.core.event_handler import EventHandler
-from rapidapi.core.logging import LoggerBuilder
-from rapidapi.core.middleware import Middleware
-from rapidapi.core.settings import Settings
-from rapidapi.helpers.resolution import get_constructor_annotations, get_types
+from trigon.contrib.plugins import PluginBuilder
+from trigon.core.controller import Controller
+from trigon.core.dependency_injection import ContainerBuilder
+from trigon.core.event_handler import EventHandler
+from trigon.core.logging import LoggerBuilder
+from trigon.core.middleware import Middleware
+from trigon.core.settings import Settings
+from trigon.helpers.resolution import get_constructor_annotations, get_types
 
 
-class RapidAPI(FastAPI):
+class trigon(FastAPI):
     def __init__(
         self,
-        title: str = "RapidAPI",
+        title: str = "trigon",
         description: str = "A batteries-included python web framework",
         version: str = "1.0.0",
         contact: Optional[Dict[str, Union[str, Any]]] = None,
@@ -41,7 +41,7 @@ class RapidAPI(FastAPI):
         self.middleware_types: list[Type[Middleware]] = []
         self.event_handler_types: list[EventHandler] = []
 
-    def register_settings(self, *settings_types: Type[Settings]) -> "RapidAPI":
+    def register_settings(self, *settings_types: Type[Settings]) -> "trigon":
         self.settings_types = settings_types
 
         return self
@@ -51,7 +51,7 @@ class RapidAPI(FastAPI):
 
         return self
 
-    def load_plugins(self, plugin_builder: Callable[[PluginBuilder], PluginBuilder]) -> "RapidAPI":
+    def load_plugins(self, plugin_builder: Callable[[PluginBuilder], PluginBuilder]) -> "trigon":
         self.plugin_builder = plugin_builder
 
         return self
@@ -61,28 +61,28 @@ class RapidAPI(FastAPI):
 
         return self
 
-    def register_controllers(self, *controller_types: Type[Controller]) -> "RapidAPI":
+    def register_controllers(self, *controller_types: Type[Controller]) -> "trigon":
         if controller_types:
             self.controller_types = controller_types
 
         return self
 
-    def discover_controllers(self, module: ModuleType) -> "RapidAPI":
+    def discover_controllers(self, module: ModuleType) -> "trigon":
         return self.register_controllers(*get_types(module, Controller))
 
-    def register_middlewares(self, *middleware_types: Type[Middleware]) -> "RapidAPI":
+    def register_middlewares(self, *middleware_types: Type[Middleware]) -> "trigon":
         if middleware_types:
             self.middleware_types = middleware_types
 
         return self
 
-    def register_event_handlers(self, *event_handler_types: EventHandler) -> "RapidAPI":
+    def register_event_handlers(self, *event_handler_types: EventHandler) -> "trigon":
         if event_handler_types:
             self.event_handler_types = event_handler_types
 
         return self
 
-    def build(self) -> "RapidAPI":
+    def build(self) -> "trigon":
         self.container = ContainerBuilder()
 
         self.container.singleton(Settings.create_combined_model(*self.settings_types))
@@ -128,8 +128,6 @@ class RapidAPI(FastAPI):
 
         if self.logger_builder.middleware_type is not None:
             self.middleware_types.extend([self.logger_builder.middleware_type])
-
-        self.event_handler_types.extend([self.logger_builder._get_event_handler()])
 
         for middleware_type in self.middleware_types:
             self.add_middleware(middleware_type)

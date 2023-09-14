@@ -1,10 +1,9 @@
-from collections.abc import Iterator
-from typing import Any
+from typing import Any, List
 
 from models.user import User
-from rapidapi.contrib.repository import Repository
-from resources.database import Database
 from sqlalchemy import exc
+from trigon.contrib.plugins.database import Database
+from trigon.contrib.repository import Repository
 
 
 class UserRepository(Repository):
@@ -19,7 +18,7 @@ class UserRepository(Repository):
     def __init__(self, database: Database) -> None:
         self.session_factory = database.session_factory
 
-    def get_all(self) -> Iterator[User]:
+    def get_all(self) -> List[User]:
         with self.session_factory() as session:
             return session.query(User).all()
 
