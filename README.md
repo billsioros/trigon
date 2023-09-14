@@ -91,6 +91,7 @@ from typing import Any, Dict
 import uvicorn
 from trigon.core.controller import Controller, http, route
 from trigon.core.controller.result import Ok, Result
+from trigon.middlewares.logging import LoggingMiddleware
 from trigon.trigon import trigon
 
 
@@ -140,11 +141,11 @@ if __name__ == "__main__":
         .build_container(lambda builder: builder.singleton(ItemService))
         .register_controllers(ItemController)
         .configure_logging(
-            lambda builder: builder.override("uvicorn")
-            .register_middleware()
+            lambda builder: builder.override("uvicorn.error", "uvicorn.asgi", "uvicorn.access")
             .add_console_handler()
             .add_file_handler("logs/{time}.log"),
         )
+        .register_middlewares(LoggingMiddleware)
         .build()
     )
 
