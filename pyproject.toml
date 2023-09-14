@@ -6,7 +6,7 @@ requires = [
 
 [tool.poetry]
 name = "trigon"
-version = "0.1.0"
+version = "0.2.0"
 description = "A batteries-included python web framework"
 readme = "README.md"
 authors = ["Vasilis Sioros <billsioros97@gmail.com>"]
