@@ -2,11 +2,11 @@ import controllers
 import uvicorn
 from services.item_service import ItemService
 from trigon.middlewares.logging import LoggingMiddleware
-from trigon.trigon import trigon
+from trigon.trigon import Trigon
 
 if __name__ == "__main__":
     app = (
-        trigon()
+        Trigon()
         .build_container(lambda container: container.singleton(ItemService))
         .discover_controllers(controllers)
         .configure_logging(

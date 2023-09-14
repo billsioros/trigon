@@ -16,7 +16,7 @@ from trigon.core.settings import Settings
 from trigon.helpers.resolution import get_constructor_annotations, get_types
 
 
-class trigon(FastAPI):
+class Trigon(FastAPI):
     def __init__(
         self,
         title: str = "trigon",
