@@ -504,14 +504,14 @@ testing = ["pytest (>=6)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=2.4)",
 
 [[package]]
 name = "lagom"
-version = "2.4.1"
+version = "2.6.0"
 description = "Lagom is a dependency injection container designed to give you 'just enough' help with building your dependencies."
 category = "main"
 optional = false
 python-versions = ">=3.7"
 
 [package.extras]
-env = ["pydantic (>=1.0.0,<2.0.0)"]
+env = ["pydantic (>=1.0.0,<3.0.0)"]
 
 [[package]]
 name = "loguru"
@@ -2096,30 +2096,25 @@ keyring = [
     {file = "keyring-24.1.1.tar.gz", hash = "sha256:3d44a48fa9a254f6c72879d7c88604831ebdaac6ecb0b214308b02953502c510"},
 ]
 lagom = [
-    {file = "lagom-2.4.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:de4b7240cb37b406e891c1d481efafb83998b847982fd6c73446e98600ed032c"},
-    {file = "lagom-2.4.1-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:01b82415eaca5514faa904fdf2011aa01b660622ff51ff22ec1a517aafca3eb9"},
-    {file = "lagom-2.4.1-cp310-cp310-win32.whl", hash = "sha256:752cab3bdce90da77597dec9ec7b9dfb8bc3b82bef03479a513aae27e23e9576"},
-    {file = "lagom-2.4.1-cp310-cp310-win_amd64.whl", hash = "sha256:2d3658fbe63f307d5f4a1f74b7ac6ba4a3c6c8eedd89e83cdff54a7b0748c151"},
-    {file = "lagom-2.4.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1264b97e503cda00c3c5afe8e214fc37bb5e7ed65167df6aab2b920ee7e2aca7"},
-    {file = "lagom-2.4.1-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:48234f48829969f5f0c254ebbf4c62b3ecb7851afd2a1e0b552f174ec9c06048"},
-    {file = "lagom-2.4.1-cp311-cp311-win32.whl", hash = "sha256:2085ee3f764823ffaf55a20da594b798ae8d148e460f392e8f2f5ca21973ae16"},
-    {file = "lagom-2.4.1-cp311-cp311-win_amd64.whl", hash = "sha256:73e06147c38d94bbb267c92aaecfa035808ec80277f497f7ec41a9f4c1c8fa2e"},
-    {file = "lagom-2.4.1-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:1a4f4ce2109e2a45d00e6a8f77365923a2a370f8035a8a96d749e9c92ba9678b"},
-    {file = "lagom-2.4.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:292d30a0c193de05020850558a4d2e612be1f3a6d20d53a1ad03bed43dccff5c"},
-    {file = "lagom-2.4.1-cp37-cp37m-musllinux_1_1_x86_64.whl", hash = "sha256:d693edcf29e32a1d4e6b2605c5e469eeeafca45668d1f4aeaf513ad52524ae77"},
-    {file = "lagom-2.4.1-cp37-cp37m-win32.whl", hash = "sha256:6f0c31369c3791184dd008545fadba9fa7a6fa6b82775f01f56da602bc124115"},
-    {file = "lagom-2.4.1-cp37-cp37m-win_amd64.whl", hash = "sha256:1a6203b1c66d3247b83b2c086a87bc1a8dc095d2017dc65517ea6ac675739ea5"},
-    {file = "lagom-2.4.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:f5b08c16769c99de02a92ad37dcb73a4e60401d8084f823de3e26325ef4c2049"},
-    {file = "lagom-2.4.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:22c8aa53c3afa0b87cb5eea20bb23c20fdb8748ebcaf7684971efe6b31981bc5"},
-    {file = "lagom-2.4.1-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:863ad16cb02d608ef8b42014742bc4778b87a5b535222299bbc969fe0b55005d"},
-    {file = "lagom-2.4.1-cp38-cp38-win32.whl", hash = "sha256:c0a5fa72256faba4cfa5df831874593178a5db128af093cbc8af149538b62757"},
-    {file = "lagom-2.4.1-cp38-cp38-win_amd64.whl", hash = "sha256:b5223a5886f463f8e5f28ea3a6e863976bd3947951b184f2d096768928b69e2f"},
-    {file = "lagom-2.4.1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:80c712b0519e17a6608dbf5b8ea61e1f1a3815fdc69c8162a3872a1ac4a6b2ee"},
-    {file = "lagom-2.4.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:01294cf357accd35a1e4c0209892bd287269fa6d8e724a48695a0dc8b41b2c83"},
-    {file = "lagom-2.4.1-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:e7bd9ec259168e5561a968baf8c2e35e7aee78a92e12243adb62a423e33490a0"},
-    {file = "lagom-2.4.1-cp39-cp39-win32.whl", hash = "sha256:41120a472917b2e8965dfc04648b96a524d94f5632b22582b9c7e4c5e1caf3a2"},
-    {file = "lagom-2.4.1-cp39-cp39-win_amd64.whl", hash = "sha256:9b2167e4d96af5356de758c6e8d70c915e119a283357d216da49d08e4af7d17b"},
-    {file = "lagom-2.4.1-py3-none-any.whl", hash = "sha256:c2553029f10f3f1b2baafdb706429ff1158d1fa62f9d0468c931320b2ee00bb3"},
+    {file = "lagom-2.6.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:39e715e316115d0873258de21ff30d456dcc5b1aad2b7f4c6b70a3b4830013c3"},
+    {file = "lagom-2.6.0-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:e80904469b2e7e34b5f7b62bdb149fc7ab3a7c725c3f8395be00e8b117907cea"},
+    {file = "lagom-2.6.0-cp310-cp310-win32.whl", hash = "sha256:add42bb4073b316f5106b0b2a658e59018cb336a97d1423bcd8275eb75d9a4f2"},
+    {file = "lagom-2.6.0-cp310-cp310-win_amd64.whl", hash = "sha256:740c9189cdca713d61a94a33f0996f74e1920c2a66e4b215658c6001df1202f2"},
+    {file = "lagom-2.6.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:13fb5300823da3e46573b843729496760799d0d8ab1f1d26b06df15c0b1c0e38"},
+    {file = "lagom-2.6.0-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:59c13d338982461dca7cf299e334d6d8e173dfa35c0e768b5c2267292456f067"},
+    {file = "lagom-2.6.0-cp311-cp311-win32.whl", hash = "sha256:e8f635798cc8d5034c0ca2a8b7adf22a5f06de8e47067ba0f291c19e864e6beb"},
+    {file = "lagom-2.6.0-cp311-cp311-win_amd64.whl", hash = "sha256:5f1409fa623a1b382fcbefe3067dbe6a569dc01ee59a1519f21bb107db08ce2f"},
+    {file = "lagom-2.6.0-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:cd8e724f17bbdffb927fd551600a5d05e9e0ad738536101826b8f271c438ef81"},
+    {file = "lagom-2.6.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3fb07af7923b01aaed899b5cedcaf70ba6ddda0379387596b6f1f79b263bfbe0"},
+    {file = "lagom-2.6.0-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:363c16dc38fd94ab914b0daad6ad1096ea684d2f987417228c84de6caf49d3a6"},
+    {file = "lagom-2.6.0-cp38-cp38-win32.whl", hash = "sha256:13f8b556ea43076f1851a6a58a12699c47d7b296d877c34a66ccd788e7ee75ea"},
+    {file = "lagom-2.6.0-cp38-cp38-win_amd64.whl", hash = "sha256:a51dbf7ce1f68bc175fcf87c82bf87b09db65c5ca37ab1d7447320019436a64a"},
+    {file = "lagom-2.6.0-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:77849fde197ec4dbc3d68487a9b0c9c1d6344eb405da4e65b365d35a508211ea"},
+    {file = "lagom-2.6.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:0e1643782bf5538a71b7e17cf8eca8164ca20af32e4aba49680532405448b24b"},
+    {file = "lagom-2.6.0-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:0dc403d10a6689137de851a84e49ec0476b6cc6d04899e9d414e92dc9d9cd4cb"},
+    {file = "lagom-2.6.0-cp39-cp39-win32.whl", hash = "sha256:715e87a4631a5a4b33f249a6734947391f4dfcb33e1256436c51f88045440bf1"},
+    {file = "lagom-2.6.0-cp39-cp39-win_amd64.whl", hash = "sha256:649e45a9a852bb33e442c937e7caee81bf12393a5f1de508a9c78ef0adcec8a3"},
+    {file = "lagom-2.6.0-py3-none-any.whl", hash = "sha256:59899f29319bfb9f3fa96f1834ae8ed2e25345e697bfff5a3da7aa0b84348978"},
 ]
 loguru = [
     {file = "loguru-0.7.1-py3-none-any.whl", hash = "sha256:046bf970cb3cad77a28d607cbf042ac25a407db987a1e801c7f7e692469982f9"},
@@ -2158,6 +2153,16 @@ markupsafe = [
     {file = "MarkupSafe-2.1.3-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:5bbe06f8eeafd38e5d0a4894ffec89378b6c6a625ff57e3028921f8ff59318ac"},
     {file = "MarkupSafe-2.1.3-cp311-cp311-win32.whl", hash = "sha256:dd15ff04ffd7e05ffcb7fe79f1b98041b8ea30ae9234aed2a9168b5797c3effb"},
     {file = "MarkupSafe-2.1.3-cp311-cp311-win_amd64.whl", hash = "sha256:134da1eca9ec0ae528110ccc9e48041e0828d79f24121a1a146161103c76e686"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-macosx_10_9_universal2.whl", hash = "sha256:f698de3fd0c4e6972b92290a45bd9b1536bffe8c6759c62471efaa8acb4c37bc"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:aa57bd9cf8ae831a362185ee444e15a93ecb2e344c8e52e4d721ea3ab6ef1823"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:ffcc3f7c66b5f5b7931a5aa68fc9cecc51e685ef90282f4a82f0f5e9b704ad11"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:47d4f1c5f80fc62fdd7777d0d40a2e9dda0a05883ab11374334f6c4de38adffd"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:1f67c7038d560d92149c060157d623c542173016c4babc0c1913cca0564b9939"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-musllinux_1_1_aarch64.whl", hash = "sha256:9aad3c1755095ce347e26488214ef77e0485a3c34a50c5a5e2471dff60b9dd9c"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-musllinux_1_1_i686.whl", hash = "sha256:14ff806850827afd6b07a5f32bd917fb7f45b046ba40c57abdb636674a8b559c"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:8f9293864fe09b8149f0cc42ce56e3f0e54de883a9de90cd427f191c346eb2e1"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-win32.whl", hash = "sha256:715d3562f79d540f251b99ebd6d8baa547118974341db04f5ad06d5ea3eb8007"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-win_amd64.whl", hash = "sha256:1b8dd8c3fd14349433c79fa8abeb573a55fc0fdd769133baac1f5e07abf54aeb"},
     {file = "MarkupSafe-2.1.3-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:8e254ae696c88d98da6555f5ace2279cf7cd5b3f52be2b5cf97feafe883b58d2"},
     {file = "MarkupSafe-2.1.3-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:cb0932dc158471523c9637e807d9bfb93e06a95cbf010f1a38b98623b929ef2b"},
     {file = "MarkupSafe-2.1.3-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9402b03f1a1b4dc4c19845e5c749e3ab82d5078d16a2a4c2cd2df62d57bb0707"},
