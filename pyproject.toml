@@ -212,6 +212,13 @@ src_paths = ["src/trigon", "tests"]
 line_length = 99
 known_first_party = "trigon"
 
+[tool.docformatter]
+black = true
+non-strict = true
+non-cap = ["trigon"]
+recursive = true
+in-place = true
+
 [tool.pytest.ini_options]
 addopts = "-vv --color=yes"
 log_cli = false
@@ -291,13 +298,6 @@ cmd = "poetry run mkdocs serve"
 [tool.poe.tasks.test]
 help = "Run the test suite and produce a coverage report"
 cmd = "poetry run pytest --cov=trigon"
-
-[tool.docformatter]
-black = true
-non-strict = true
-non-cap = ["trigon"]
-recursive = true
-in-place = true
 
 [tool.bandit]
 recursive = true

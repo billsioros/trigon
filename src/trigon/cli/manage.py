@@ -35,7 +35,7 @@ def serve(port: int = 8000):
                 f"{port}",
                 "--reload",
                 "--log-level=debug",
-            ],
+            ], check=False,
         )
     except subprocess.CalledProcessError as e:
         raise typer.Exit(code=e.returncode)
@@ -47,7 +47,7 @@ def test():
     cmd = "poetry run python -m pytest --cov=trigon"
 
     try:
-        subprocess.run(cmd.split())
+        subprocess.run(cmd.split(), check=False)
     except subprocess.CalledProcessError as e:
         raise typer.Exit(code=e.returncode)
 
@@ -58,7 +58,7 @@ def docs(port: int = 8000):
     webbrowser.open(f"http://localhost:{port}")
 
     try:
-        subprocess.run(["poetry", "run", "mkdocs", "serve", "-a", f"localhost:{port}"])
+        subprocess.run(["poetry", "run", "mkdocs", "serve", "-a", f"localhost:{port}"], check=False)
     except subprocess.CalledProcessError as e:
         raise typer.Exit(code=e.returncode)
 

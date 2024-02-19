@@ -1,6 +1,5 @@
 """A batteries-included python web framework."""
 
-
 from types import ModuleType
 from typing import Any, Callable, Dict, Optional, Type, Union
 
