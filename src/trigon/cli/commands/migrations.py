@@ -14,7 +14,7 @@ def migrations():
 def check():
     """Check whether the database is up to date."""
     try:
-        subprocess.run(["alembic", "check"])
+        subprocess.run(["alembic", "check"], check=False)
     except subprocess.CalledProcessError as e:
         raise typer.Exit(code=e.returncode)
 
@@ -23,7 +23,7 @@ def check():
 def generate(commit_message: str):
     """Auto-generate a migration script."""
     try:
-        subprocess.run(["alembic", "revision", "--autogenerate", "-m", f'"{commit_message}"'])
+        subprocess.run(["alembic", "revision", "--autogenerate", "-m", f'"{commit_message}"'], check=False)
     except subprocess.CalledProcessError as e:
         raise typer.Exit(code=e.returncode)
 
@@ -32,7 +32,7 @@ def generate(commit_message: str):
 def apply(revision: str = "head"):
     """Apply migrations."""
     try:
-        subprocess.run(["alembic", "upgrade", revision])
+        subprocess.run(["alembic", "upgrade", revision], check=False)
     except subprocess.CalledProcessError as e:
         raise typer.Exit(code=e.returncode)
 
@@ -41,6 +41,6 @@ def apply(revision: str = "head"):
 def revert(revision: str = "head"):
     """Revert the previous migrations."""
     try:
-        subprocess.run(["alembic", "downgrade", revision])
+        subprocess.run(["alembic", "downgrade", revision], check=False)
     except subprocess.CalledProcessError as e:
         raise typer.Exit(code=e.returncode)

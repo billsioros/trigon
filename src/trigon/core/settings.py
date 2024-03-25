@@ -6,7 +6,6 @@ M = TypeVar("M", bound=BaseModel)
 
 
 class Settings(BaseModel):
-    pass
 
     @classmethod
     def create_combined_model(cls, *settings: type["Settings"]) -> type["Settings"]:
