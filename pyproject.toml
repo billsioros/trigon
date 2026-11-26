@@ -30,7 +30,7 @@ trigon = "trigon.cli.manage:cli"
 [tool.poetry.dependencies]
 python = ">=3.8,<4.0"
 fastapi = "^0.103.1"
-loguru = "^0.7.1"
+loguru = "^0.8.0"
 sqlalchemy = "^2.0.20"
 pydantic = "^2.3.0"
 pydantic-settings = "^2.0.3"
